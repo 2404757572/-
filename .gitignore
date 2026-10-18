@@ -1,0 +1,18 @@
+# 忽略操作系统与编辑器生成文件
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# 忽略本地配置与密钥，示例文件请用 .example 后缀
+.env
+*.local
+config.local.*
+
+# 忽略脚本运行产物
+*.log
+output/
+tmp/
+__pycache__/
+*.pyc

@@ -14,6 +14,33 @@
 - 软件逆向：程序结构分析、调试与二进制分析的学习笔记与实践记录
 - 问题记录：踩坑过程、排查思路与最终方案
 
+## 仓库结构
+
+```text
+scripts/
+  automation/        自动化、批处理类脚本
+  reverse/           逆向分析类脚本
+  tools/             通用小工具与仓库维护脚本
+  INDEX.md           自动生成的脚本索引
+templates/
+  script-template.md 脚本说明模板
+docs/
+  script-format.md   脚本文件格式规范
+```
+
+脚本统一采用「元数据头 + 正文」格式，命名规则为 `<名称>-v<版本>.<扩展名>`。完整规范见 `docs/script-format.md`。
+
+## 发布脚本
+
+1. 按规范编写脚本，补齐元数据头
+2. 复制 `templates/script-template.md` 编写同名说明文件
+3. 运行校验与索引生成
+
+```bash
+# 校验脚本格式并更新索引
+python3 scripts/tools/check-scripts-v1.0.0.py --index
+```
+
 ## 使用说明
 
 ```bash
@@ -21,7 +48,7 @@
 git clone <仓库地址>
 ```
 
-每个脚本会注明用途、依赖与运行方式。运行前请确认环境已准备好，并按需调整配置。
+每个脚本会注明用途、依赖与运行方式。运行前请确认环境已准备好，并按需调整配置。索引见 `scripts/INDEX.md`。
 
 ## 交流与反馈
 
